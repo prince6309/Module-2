@@ -20,6 +20,7 @@ public class Solution {
             for(int j=0;j<m;j++){
                 if(Math.abs(arr[i])==arr1[j]){
                 System.out.print(arr[i]+" ");
+                    break;
             }
             
             }
