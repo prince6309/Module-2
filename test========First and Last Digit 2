@@ -1,0 +1,15 @@
+import java.io.*;
+import java.util.*;
+import java.math.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int digits = (int)(Math.log10(n));
+         int x = (int)(n / (int)(Math.pow(10, digits)));
+        System.out.print(x+" "+n%10);
+    }
+}
