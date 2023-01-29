@@ -1,0 +1,54 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+    public static void transpose(int[][] A){
+        int n=A.length;
+        for(int i=0;i<n;i++){
+            for(int j=i;j<n;j++){
+                int temp=A[i][j];
+                A[i][j]=A[j][i];
+                A[j][i]=temp;
+                
+            }
+        }
+    }
+    public static void reverse(int[][] A){
+        int n=A.length;
+        for(int row=0;row<n;row++){
+            int i=0;
+            int j=n-1;
+            while(i<j){
+                int temp=A[row][i];
+                A[row][i]=A[row][j];
+                A[row][j]=temp;
+                i++;
+                j--;
+            } 
+        }
+    }
+    public static void display(int[][] A){
+        int n=A.length;
+        for(int i=0;i<n;i++){
+            for(int j=0;j<n;j++){
+                System.out.print(A[i][j]+"\t");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int[][] A=new int[n][n];
+        for(int i=0;i<n;i++){
+            for(int j=0;j<n;j++){
+                A[i][j]=sc.nextInt();
+            }
+        }
+        transpose(A);
+        reverse(A);
+        display(A);
+    }
+}
