@@ -1,0 +1,47 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc=new Scanner(System.in);
+        int row=sc.nextInt();
+        int col=sc.nextInt();
+        int[][] A=new int[row][col];
+        for(int i=0;i<row;i++){
+            for(int j=0;j<col;j++){
+                A[i][j]=sc.nextInt();
+            }
+        }
+        int minr=0;
+        int maxr=row-1;
+        int minc=0;
+        int maxc=col-1;
+        int total=row*col;
+        int count=0;
+        while(count<total){
+            for(int j=minc;j<=maxc && count<total;j++){
+                System.out.print(A[minr][j]+"   ");
+                count++;
+            }
+            minr++;
+            for(int i=minr;i<=maxr && count<total;i++){
+                System.out.print(A[i][maxc]+"   ");
+                count++;
+            }
+            maxc--;
+            for(int j=maxc;j>=minc && count<total;j--){
+                System.out.print(A[maxr][j]+"   ");
+                count++;
+            }
+            maxr--;
+            for(int i=maxr;i>=minr && count<total;i--){
+                System.out.print(A[i][minc]+"   ");
+                count++;
+            }
+            minc++;
+        }
+        
+    }
+}
