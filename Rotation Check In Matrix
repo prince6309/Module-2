@@ -1,0 +1,36 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+    public static String checkMatrix(int [][] A){
+        int n=A.length;
+        String s="";
+        for(int j=0;j<n;j++){
+            s= s+A[0][j];
+        }
+        s= s+s;
+        for(int row =1;row<n;row++){
+            String curr = "";
+            for(int col =0;col<n;col++){
+                curr=curr+A[row][col];
+            }
+            if(s.indexOf(curr)== -1){
+                return "NO";
+            }
+        }
+        return "YES";
+    }
+
+    public static void main(String[] args) {
+       Scanner sc=new Scanner(System.in);
+        int n =sc.nextInt();
+        int[][] A=new int[n][n];
+        for(int i=0;i<n;i++){
+            for(int j=0;j<n;j++){
+                A[i][j]=sc.nextInt();
+            }
+        }
+        String ans=checkMatrix(A);
+        System.out.println(ans);
+    }
+}
