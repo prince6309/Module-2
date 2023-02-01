@@ -1,0 +1,18 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+       Scanner sc=new Scanner(System.in);
+        String s=sc.next();
+        
+        
+        int n=s.length();
+        for(int st=0;st<n;st++){
+            for(int end=st;end<n;end++){
+                System.out.println(s.substring(st,end+1));
+            }
+        }
+    }
+}
