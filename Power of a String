@@ -1,0 +1,29 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+     Scanner sc=new Scanner(System.in);
+        String s=sc.next();
+         int curr =1;
+        int max=-1;
+
+
+        for(int i=1;i<s.length();i++){
+            if(s.charAt(i)==s.charAt(i-1)){
+                curr++;
+            }
+            else{
+                if(curr>max){
+                    max=curr;
+                }
+                curr =1;
+            }
+        }
+        if(curr>max){
+            max=curr;
+        }
+        System.out.println(max);
+    }
+}
