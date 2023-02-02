@@ -1,0 +1,20 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+      Scanner sc=new Scanner(System.in);
+        String n=sc.next();
+        int i=n.length();
+        int sum=0;
+        for(int st=0;st<i;st++){
+            for(int end =st;end<i;end++){
+                String ss=n.substring(st,end+1);
+                int val=Integer.parseInt(ss);
+                sum +=val;
+            }
+        }
+        System.out.println(sum);
+    }
+}
