@@ -1,0 +1,36 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+    public static int fnr(int[] freq){
+        for(int i=0;i<freq.length;i++){
+             if(freq[i]==1){
+                return i;
+                 }
+        }
+        return -1;
+    }
+
+    public static void main(String[] args) {
+       Scanner sc =new Scanner(System.in);
+        String s = sc.nextLine();
+        s = s.toLowerCase();
+        int[] freq =new int[26];
+        for(int i=0;i<s.length();i++){
+            char ch=s.charAt(i);
+            
+                int idx =ch-'a';
+                 freq[idx]++;
+
+        }
+        int ans =fnr(freq);
+        if(ans==-1){
+            System.out.println(ans);
+        }
+        else{
+            System.out.println((char)(ans+'a'));
+        }
+        
+
+    }
+}
