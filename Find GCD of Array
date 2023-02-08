@@ -1,0 +1,31 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+    public static int gcd(int x,int y){
+        int ans=Math.min(x,y);
+        while(ans >=1){
+            if(x%ans==0 && y%ans==0){
+                break;
+            }
+            ans--;
+        }
+        return ans;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int[] A=new int[n];
+        for(int i=0;i<n;i++){
+            A[i]=sc.nextInt();
+        }
+        int min=A[0];
+        int max=A[0];
+        for(int i=1;i<n;i++){
+            min=Math.min(min,A[i]);
+            max=Math.max(max,A[i]);
+        }
+        System.out.println(gcd(min,max));
+    }
+}
