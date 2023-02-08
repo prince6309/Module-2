@@ -1,0 +1,14 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        String str=sc.next();
+        char ch1=sc.next().charAt(0);
+        char ch2=sc.next().charAt(0);
+        
+        System.out.println(str.indexOf(ch2)-str.indexOf(ch1)-1);
+    }
+}
